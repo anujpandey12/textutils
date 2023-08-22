@@ -3,8 +3,8 @@ import './App.css';
 import Header from './components/Header';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-import About from './components/About';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import About from './components/About';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = (props) => {
   const [mode, setMode] = useState('light');
@@ -35,16 +35,17 @@ const App = (props) => {
   }
   return (
     <div>
-      <Router>
+      {/* <Router> */}
         <Header siteTitle="TextUtils" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
-        <div className="container my-3">        
-          <Routes>
-            <Route path='/' element={<TextForm heading="Enter a text to analyze below" showAlert={showAlert} mode={mode} />} />
-            <Route path='about' element={<About />} />
-          </Routes>
+        <div className="container my-3">
+          <TextForm heading="Enter a text to analyze below" showAlert={showAlert} mode={mode} />        
+          {/* <Routes> */}
+            {/* <Route path='/' element={<TextForm heading="Enter a text to analyze below" showAlert={showAlert} mode={mode} />} /> */}
+            {/* <Route path='about' element={<About />} /> */}
+          {/* </Routes> */}
         </div>
-      </Router>
+      {/* </Router> */}
     </div>
   )
 };
