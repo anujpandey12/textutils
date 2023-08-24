@@ -40,8 +40,8 @@ const App = (props) => {
         <Alert alert={alert} />
         <div className="container my-3">
           <Routes>
-            <Route path='home' element={<TextForm heading="Enter a text to analyze below" showAlert={showAlert} mode={mode} />} />
-            <Route path='about' element={<About />} />
+            <Route path='/' element={<TextForm heading="Enter a text to analyze below" showAlert={showAlert} mode={mode} />} />
+            <Route path='about' element={<About mode={mode} />} />
           </Routes>
         </div>
       </Router>

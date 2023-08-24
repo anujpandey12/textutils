@@ -40,14 +40,14 @@ export default function TextForm(props) {
                 <div className="mb-3">                
                     <textarea className="form-control" style={{backgroundColor: props.mode==='dark'?'#042743':'white', color: props.mode==='dark'?'white':'black'}} value={text} onChange={handleOnChange} id="textBox" rows="8"></textarea>
                 </div>
-                <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
-                <button className="btn btn-warning mx-1" onClick={handleLoClick}>Convert to Lowercase</button>
-                <button className="btn btn-success mx-1" onClick={copyToClipBoard}>Copy Text</button>
-                <button className="btn btn-danger mx-1" onClick={handleClearClick}>Clear Text</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
+                <button disabled={text.length===0} className="btn btn-warning mx-1" onClick={handleLoClick}>Convert to Lowercase</button>
+                <button disabled={text.length===0} className="btn btn-success mx-1" onClick={copyToClipBoard}>Copy Text</button>
+                <button disabled={text.length===0} className="btn btn-danger mx-1" onClick={handleClearClick}>Clear Text</button>
             </div>
             <div className="my-3" style={{color: props.mode==='dark'?'white':'black'}}>
                 <h3>Your Text Summary</h3>
-                <p>{text.split(" ").length} words and {text.length} characters</p>
+                <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
             </div>
             <div className="my-3" style={{color: props.mode==='dark'?'white':'black'}}>
                 <h3>Preview</h3>
