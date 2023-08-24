@@ -51,7 +51,7 @@ export default function TextForm(props) {
             </div>
             <div className="my-3" style={{color: props.mode==='dark'?'white':'black'}}>
                 <h3>Preview</h3>
-                <p>{text}</p>
+                <p>{text.length>0?text:'Nothing to preview!'}</p>
             </div>
         </>
     )
