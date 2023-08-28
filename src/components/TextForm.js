@@ -17,9 +17,6 @@ export default function TextForm(props) {
     }
 
     const copyToClipBoard = () => {
-        const textField = document.getElementById('textBox');
-        textField.select();
-        textField.setSelectionRange(0, 99999); // For mobile devices
         navigator.clipboard.writeText(text);
         props.showAlert("Text Copied!", "success");
     }
@@ -47,7 +44,7 @@ export default function TextForm(props) {
             </div>
             <div className="my-3" style={{color: props.mode==='dark'?'white':'black'}}>
                 <h3>Your Text Summary</h3>
-                <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+                <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
             </div>
             <div className="my-3" style={{color: props.mode==='dark'?'white':'black'}}>
                 <h3>Preview</h3>
