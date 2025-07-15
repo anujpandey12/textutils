@@ -38,7 +38,7 @@ export default function TextForm(props) {
             <textarea
               className="form-control"
               style={{
-                backgroundColor: props.mode === "dark" ? "#042743" : "white",
+                backgroundColor: props.mode === "dark" ? "rgba(0, 140, 255, 1)" : "white",
                 color: props.mode === "dark" ? "white" : "black",
               }}
               value={text}
@@ -80,7 +80,7 @@ export default function TextForm(props) {
           className="my-3"
           style={{ color: props.mode === "dark" ? "white" : "black" }}
         >
-          <h3 style={{ fontSize: "16px" }}>Your Text Summary</h3>
+          <h3 style={{ fontSize: "18px" }}>Your Text Summary</h3>
           <p>
             {
               text.split(/\s+/).filter((element) => {
@@ -94,7 +94,7 @@ export default function TextForm(props) {
           className="my-3"
           style={{ color: props.mode === "dark" ? "white" : "black" }}
         >
-          <h3 style={{ fontSize: "16px" }}>Preview</h3>
+          <h3 style={{ fontSize: "18px" }}>Preview</h3>
           <p>{text.length > 0 ? text : "Nothing to preview!"}</p>
         </div>
       </>
