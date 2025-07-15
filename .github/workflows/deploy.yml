@@ -3,11 +3,11 @@ name: Deploy React App to Azure Web App
 on:
   push:
     branches:
-      - main  # or your deployment branch
+      - main
 
 env:
-  AZURE_WEBAPP_NAME: prosares-dev10         # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: './build'      # set this to the path to your web app project, defaults to the repository root      
+  AZURE_WEBAPP_NAME: prosares-dev10
+  AZURE_WEBAPP_PACKAGE_PATH: './build'      
 
 jobs:
   build-and-deploy:
@@ -20,7 +20,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '22.14.0'  # Use the version that matches your project
+        node-version: '22.14.0'
 
     - name: Install Dependencies
       run: npm install
